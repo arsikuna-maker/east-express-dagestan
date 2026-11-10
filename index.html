@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#831d27" />
+    <meta name="description" content="Восточный экспресс — панорамный поезд и цифровой туристический маршрут по Дагестану." />
+    <title>Восточный экспресс — Дагестан</title>
+    <link rel="preload" as="image" href="assets/rail-canyon.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержанию</a>
+
+    <div class="journey-world" id="journeyWorld" aria-hidden="true">
+      <div class="panorama panorama-a is-active" style="background-image:url('assets/rail-canyon.jpg')"></div>
+      <div class="panorama panorama-b" style="background-image:url('assets/mountain-train.jpg')"></div>
+      <div class="panorama panorama-c" style="background-image:url('assets/cover-train.jpg')"></div>
+      <div class="panorama-grade"></div>
+      <div class="horizon-glow"></div>
+      <svg class="rail-scene" viewBox="0 0 1440 1000" preserveAspectRatio="none">
+        <path class="track-bed" d="M-100 628 C310 500 810 730 1540 575 L1540 627 C810 782 310 552 -100 680Z" />
+        <g class="sleepers" id="sleepers"></g>
+        <path class="rail-shadow" d="M-100 628 C310 500 810 730 1540 575 M-100 680 C310 552 810 782 1540 627" />
+        <path class="rail" d="M-100 628 C310 500 810 730 1540 575 M-100 680 C310 552 810 782 1540 627" />
+        <path class="rail-light" d="M-100 625 C310 497 810 727 1540 572 M-100 677 C310 549 810 779 1540 624" />
+      </svg>
+      <div class="train-shadow"></div>
+      <div class="train-perspective" id="trainPerspective">
+        <div class="train-3d" id="train3d">
+          <div class="car panorama-car lead-car">
+            <div class="car-face car-side side-far"></div>
+            <div class="car-face car-side side-near">
+              <div class="shell-highlight"></div><div class="panorama-glass"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="door door-back"><span></span></div><div class="car-stripe"></div><div class="lower-skirt"></div>
+              <div class="cab-glass"><i></i><i></i></div><div class="nose-cheek"></div><div class="headlamp headlamp-top"></div><div class="headlamp headlamp-low"></div><div class="destination-display">ВОСТОЧНЫЙ ЭКСПРЕСС</div>
+              <div class="bogie bogie-back"><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i></div>
+              <div class="bogie bogie-front"><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i></div>
+            </div>
+            <div class="car-face car-roof"><span class="roof-ridge"></span><span class="roof-pod roof-pod-a"></span><span class="roof-pod roof-pod-b"></span><span class="pantograph"><i></i><b></b></span></div>
+            <div class="car-face car-end car-end-back"></div><div class="car-face aerodynamic-nose"></div><div class="car-face car-underbody"></div>
+          </div>
+          <div class="car panorama-car trailing-car">
+            <div class="car-face car-side side-far"></div>
+            <div class="car-face car-side side-near">
+              <div class="shell-highlight"></div><div class="panorama-glass"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="door door-back"><span></span></div><div class="door door-front"><span></span></div><div class="car-stripe"></div><div class="lower-skirt"></div>
+              <div class="car-number">02</div>
+              <div class="bogie bogie-back"><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i></div>
+              <div class="bogie bogie-front"><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i><i class="wheel"></i></div>
+            </div>
+            <div class="car-face car-roof"><span class="roof-ridge"></span><span class="roof-pod roof-pod-a"></span><span class="roof-pod roof-pod-b"></span></div>
+            <div class="car-face car-end car-end-back"></div><div class="car-face car-end car-end-front"></div><div class="car-face car-underbody"></div>
+          </div>
+        </div>
+      </div>
+      <div class="world-caption"><span class="caption-dot"></span><span id="worldCaption">Горный маршрут · Дагестан</span><span class="caption-progress" id="worldProgress">01 / 07</span></div>
+      <div class="world-label world-label-left">Море <span>·</span> горы <span>·</span> дорога</div>
+    </div>
+
+    <div class="page-progress" aria-hidden="true"><span id="pageProgress"></span></div>
+    <header class="site-header">
+      <a href="#top" class="brand" aria-label="Восточный экспресс — начало маршрута"><span class="brand-icon">В</span><span>ВОСТОЧНЫЙ<br />ЭКСПРЕСС</span></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню"><span></span><span></span></button>
+      <nav class="site-nav" id="siteNav" aria-label="Разделы проекта">
+        <a href="#idea">Идея</a><a href="#experience">Поездка</a><a href="#ai">ИИ и туризм</a><a href="#archive">Исходная заявка</a><a class="nav-cta" href="#team">Команда</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="chapter hero" id="top" data-scene="0" aria-labelledby="heroTitle">
+        <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Общественный проект · Обучение служением</p>
+          <h1 id="heroTitle">Восточный<br /><em>экспресс</em></h1>
+          <p class="hero-subtitle">Панорамный поезд и цифровой маршрут, который соединяет путешественника с Дагестаном.</p>
+          <a class="button button-light" href="#idea">Начать путешествие <span>↓</span></a>
+        </div>
+        <div class="hero-foot"><span>КОНЦЕПЦИЯ ТУРИЗМА БУДУЩЕГО</span><span class="scroll-cue"><i></i> Листайте, поезд тронется</span></div>
+        <div class="hero-counter"><strong>01</strong><span>из 07 остановок</span></div>
+      </section>
+
+      <section class="chapter split-chapter" id="idea" data-scene="0" aria-labelledby="ideaTitle">
+        <div class="chapter-index">01 <span>· ЗАМЫСЕЛ</span></div>
+        <div class="chapter-panel reveal">
+          <p class="eyebrow"><span></span> Дагестан виден из окна</p>
+          <h2 id="ideaTitle">Дорога,<br />которая <em>собирает</em><br />впечатления.</h2>
+          <p class="body-lead">«Восточный экспресс» задуман как панорамный туристический поезд и единый сценарий путешествия по республике.</p>
+          <p>Гость едет с комфортом, выходит на остановках, знакомится с местными гидами и предпринимателями. Цифровой сервис помогает связать расписание, маршрут и услуги региона.</p>
+          <div class="stat-row"><div><strong>2</strong><span>автономных<br />вагона в замысле</span></div><div><strong>100–120</strong><span>мест в составе</span></div><div><strong>7</strong><span>остановок<br />в проекте</span></div></div>
+          <p class="tiny-note">Маршрут, состав и возможность запуска требуют отдельной проверки. Фото — визуальные референсы из исходной презентации, не подтверждение конкретных мест.</p>
+        </div>
+        <div class="chapter-side-note">02 / 07 <span>Панорамный маршрут</span></div>
+      </section>
+
+      <section class="chapter experience-chapter" id="experience" data-scene="1" aria-labelledby="experienceTitle">
+        <div class="chapter-index">02 <span>· ПУТЕШЕСТВИЕ</span></div>
+        <div class="experience-content reveal">
+          <p class="eyebrow eyebrow-light"><span></span> Не просто переезд</p>
+          <h2 id="experienceTitle">Весь регион —<br /><em>часть поездки.</em></h2>
+          <p class="body-lead">Концепция объединяет железную дорогу с услугами, которые нужны человеку до поездки, в пути и на остановках.</p>
+          <div class="experience-grid">
+            <article><span>01</span><h3>До отправления</h3><p>Перелёт, трансфер, проживание и понятная программа.</p></article>
+            <article><span>02</span><h3>В вагоне</h3><p>Панорамный вид, места повышенного комфорта и питание.</p></article>
+            <article><span>03</span><h3>На остановках</h3><p>Экскурсии, гиды, прогулки на лошадях и катерах, предложения местных партнёров.</p></article>
+            <article><span>04</span><h3>Забота о госте</h3><p>Страхование и безопасность как часть общего сценария.</p></article>
+          </div>
+          <div class="route-ribbon"><span>ОСТАНОВКИ</span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>7</b></div>
+        </div>
+        <div class="chapter-side-note">03 / 07 <span>Местные впечатления</span></div>
+      </section>
+
+      <section class="chapter problem-chapter" id="project" data-scene="2" aria-labelledby="projectTitle">
+        <div class="chapter-index">03 <span>· ЗАДАЧА РЕГИОНА</span></div>
+        <div class="project-layout reveal">
+          <div class="project-heading">
+            <p class="eyebrow"><span></span> Туризм как точка роста</p>
+            <h2 id="projectTitle">Больше, чем<br />красивый <em>вид.</em></h2>
+            <p class="body-lead">Проект отвечает на вызов: растущий турпоток должен приносить пользу путешественникам, местному бизнесу и жителям.</p>
+          </div>
+          <div class="problem-stack">
+            <article><span>ПРОБЛЕМА</span><p>Дорожные заторы и рост риска ДТП при увеличении потока туристов.</p></article>
+            <article><span>СЕРВИС</span><p>По оценке авторов заявки, уровень туристического сервиса не всегда отвечает ожиданиям гостей.</p></article>
+            <article><span>РАЗРЫВ РОСТА</span><p>Авторы отмечали, что развитие региона не успевает за ростом туристической отрасли.</p></article>
+            <article><span>ЦЕЛЬ</span><p>Укрепить образ Дагестана, поднять качество сервиса и конкурентоспособность, создать условия для инвестиций, рабочих мест и малого бизнеса.</p></article>
+          </div>
+          <div class="audience-strip"><span>ТУРИСТЫ</span><span>СТУДЕНТЫ И ШКОЛЬНИКИ</span><span>МЕСТНЫЕ ЖИТЕЛИ</span><span>ЛЮДИ С ОВЗ</span></div>
+          <p class="stakeholders">Участники: органы власти, перевозчики, инвесторы, предприниматели, гиды и местные сообщества.</p>
+        </div>
+        <div class="chapter-side-note">04 / 07 <span>Польза для региона</span></div>
+      </section>
+
+      <section class="chapter ai-chapter" id="ai" data-scene="2" aria-labelledby="aiTitle">
+        <div class="chapter-index">04 <span>· ЦИФРОВОЙ СЛОЙ</span></div>
+        <div class="ai-layout reveal">
+          <div class="ai-heading">
+            <p class="eyebrow"><span></span> ИИ помогает увидеть больше</p>
+            <h2 id="aiTitle">Технология<br />с человеческим<br /><em>маршрутом.</em></h2>
+            <p class="body-lead">Я хочу развиваться в сфере ИИ в Яндексе и применять знания к задачам, которые важны для моего региона.</p>
+          </div>
+          <div class="ai-steps">
+            <article><span>01 / СПРОСИТЬ</span><h3>Что нужно туристу?</h3><p>Подобрать план по датам, интересам, времени и доступности.</p></article>
+            <article><span>02 / СОБРАТЬ</span><h3>Соединить данные</h3><p>Маршрут, расписание, трансфер и проверенные предложения местных партнёров.</p></article>
+            <article><span>03 / ПРОВЕРИТЬ</span><h3>Оставить человека в контуре</h3><p>Культурные, исторические и безопасностные сведения подтверждают местные эксперты.</p></article>
+          </div>
+          <div class="ai-note"><span class="ai-spark">✳</span><p><strong>Мой возможный вклад:</strong> исследовать потребности туристов, подготовить проверенные региональные данные и тестировать качество ответов ИИ-помощника.</p></div>
+        </div>
+        <div class="chapter-side-note">05 / 07 <span>Идея, которую можно проверить</span></div>
+      </section>
+
+      <section class="chapter archive-chapter" id="archive" data-scene="0" aria-labelledby="archiveTitle">
+        <div class="chapter-index">05 <span>· ИСХОДНАЯ ЗАЯВКА</span></div>
+        <div class="archive-layout reveal">
+          <div class="archive-heading">
+            <p class="eyebrow"><span></span> Проектный архив</p>
+            <h2 id="archiveTitle">Идея с<br /><em>историей.</em></h2>
+            <div class="archive-stamp"><strong>2022</strong><span>год, указанный<br />в исходном файле</span></div>
+            <p>По презентации, проект тогда находился на стадии детального проектирования. В файле заявлялись согласования с региональными властями и железнодорожной структурой, а также интерес инвесторов. Эти сведения требуют актуальной проверки.</p>
+          </div>
+          <div class="timeline-block"><div class="timeline-title"><h3>План из заявки</h3><span>ИЮЛЬ — ДЕКАБРЬ 2022</span></div>
+            <div class="timeline-list">
+              <article><b>ИЮЛЬ</b><p>Детальное проектирование и презентация для получения финансовой и технической поддержки.</p></article>
+              <article><b>АВГУСТ</b><p>Заказ состава, согласование маршрута, проект благоустройства остановок.</p></article>
+              <article><b>СЕНТЯБРЬ</b><p>Реклама, юридическая база и подробный бизнес-план.</p></article>
+              <article><b>ОКТЯБРЬ</b><p>Партнёрские презентации, набор команды и обучающий курс.</p></article>
+              <article><b>НОЯБРЬ</b><p>Продвижение и подготовка к запуску проекта.</p></article>
+              <article><b>ДЕКАБРЬ</b><p>Согласование условий и укрепление кадровой и проектной базы.</p></article>
+            </div>
+          </div>
+        </div>
+        <div class="chapter-side-note">06 / 07 <span>Архивные данные · требуют актуализации</span></div>
+      </section>
+
+      <section class="chapter budget-chapter" id="budget" data-scene="1" aria-labelledby="budgetTitle">
+        <div class="chapter-index">06 <span>· РЕСУРСЫ И РИСКИ</span></div>
+        <div class="budget-layout reveal">
+          <div class="budget-heading"><p class="eyebrow"><span></span> Смета из исходного файла</p><h2 id="budgetTitle">Идею нужно<br /><em>проверить цифрами.</em></h2><p>Суммы ниже — оценки из заявки, не актуальная смета.</p></div>
+          <div class="budget-table">
+            <div class="budget-row"><span>Состав из двух автономных вагонов</span><b>120–150 млн ₽</b></div>
+            <div class="budget-row"><span>Реклама</span><b>2–5 млн ₽</b></div>
+            <div class="budget-row"><span>7 станций · 2–5 млн ₽ за станцию</span><b>14–35 млн ₽</b></div>
+            <div class="budget-row"><span>Техническое и юридическое сопровождение</span><b>1–2 млн ₽</b></div>
+            <div class="budget-row"><span>Дооснащение двух составов</span><b>2–4 млн ₽</b></div>
+          </div>
+          <div class="budget-total"><span>Сложение статей</span><strong>139–196 млн ₽</strong><i></i><span>Итог, заявленный в файле</span><strong class="legacy-total">341 млн ₽</strong></div>
+          <p class="budget-alert"><b>Нужно пересчитать:</b> суммы отдельных статей не совпадают с заявленным итогом 341 млн ₽.</p>
+          <div class="resource-risk"><article><span>РЕСУРСЫ ИЗ ЗАЯВКИ</span><p>Экспертная группа · конкурс АСИ «Сильные идеи для нового времени» · региональные и национальные программы · инвесторы и технические партнёры.</p></article><article><span>РИСКИ ИЗ ЗАЯВКИ</span><p>Нет экспертной группы (средний) · недостаток финансирования (высокий). Предлагались гранты, программы и переговоры с инвесторами.</p></article></div>
+        </div>
+        <div class="chapter-side-note">07 / 07 <span>Путь начинается с точных данных</span></div>
+      </section>
+
+      <section class="chapter closing-chapter" id="team" data-scene="2" aria-labelledby="teamTitle">
+        <div class="chapter-index">07 <span>· КОМАНДА И ПОДДЕРЖКА</span></div>
+        <div class="closing-layout reveal">
+          <div class="closing-heading"><p class="eyebrow eyebrow-light"><span></span> Идея строится на опыте людей</p><h2 id="teamTitle">Что остаётся<br /><em>после меня?</em></h2><p class="body-lead">Проверенный маршрут, сайт, цифровая база местных партнёров и понятный способ измерить пользу для туристов и жителей.</p><div class="closing-hashtag">#СТРАНУМЕНЯЮТЛЮДИ</div></div>
+          <div class="team-cards"><article><span>АВТОР ПРОЕКТА</span><h3>Темур Султанович Атаев</h3><p>В исходной презентации указан как руководитель отделения Россельхозбанка.</p></article><article><span>СОАВТОР</span><h3>Талхан Куниевич Куниев</h3><p>В файле указан как заместитель директора по развитию туризма в заповеднике «Сарыкум».</p></article><article class="team-experience"><span>ОПЫТ ИЗ ЗАЯВКИ</span><p>Работа на бархане Сарыкум и в Эльтавском лесу; более трёх лет в туристической отрасли, по словам авторов.</p></article><article class="team-contact"><span>КОНТАКТЫ КОМАНДЫ</span><p>Личные контактные данные не размещены на открытой странице.</p></article></div>
+          <div class="support-request"><span>ЗАПРОС НА ПОДДЕРЖКУ</span><p>Экспертная оценка и сопровождение; помощь с включением в региональные и национальные программы; рассмотрение особого статуса. Перед запуском нужно заново проверить маршрут, партнёрства, станционную инфраструктуру и экономику.</p></div>
+        </div>
+        <footer class="site-footer"><span>ВОСТОЧНЫЙ ЭКСПРЕСС · КОНЦЕПЦИЯ ПАНОРАМНОГО ТУРИЗМА ПО ДАГЕСТАНУ</span><a href="https://rgvktv.ru/news/obshchestvo/minturizm-dagestana-podvel-itogi-za-2025-god01012026/" target="_blank" rel="noreferrer">Итоги туризма за 2025 год · РГВК «Дагестан» ↗</a><a href="#top">Вернуться к началу ↑</a></footer>
+      </section>
+    </main>
+  </body>
+</html>
